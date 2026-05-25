@@ -7,13 +7,6 @@ pipeline {
 
     stages {
 
-        stage('Code Checkout') {
-            steps {
-                git branch: 'main',
-                url: 'https://github.com/anshadmtmt-ship-it/calculator.git'
-            }
-        }
-
         stage('Build') {
             steps {
                 sh 'mvn clean package'

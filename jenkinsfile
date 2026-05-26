@@ -38,13 +38,13 @@ pipeline {
 
     post {
         success {
-            mail to: 'yourmail@gmail.com',
+            mail to: 'anshadmtmt@gmail.com',
             subject: 'Quality Gate Passed - Ready for Deployment',
             body: 'Calculator project passed SonarQube Quality Gate and is ready for deployment.'
         }
 
         failure {
-            mail to: 'yourmail@gmail.com',
+            mail to: 'anshadmtmt@gmail.com',
             subject: 'Pipeline Failed',
             body: 'Build or Quality Gate failed.'
         }

@@ -26,5 +26,27 @@ pipeline {
                 }
             }
         }
+
+        stage('Quality Gate') {
+            steps {
+                timeout(time: 2, unit: 'MINUTES') {
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            mail to: 'yourmail@gmail.com',
+            subject: 'Quality Gate Passed - Ready for Deployment',
+            body: 'Calculator project passed SonarQube Quality Gate and is ready for deployment.'
+        }
+
+        failure {
+            mail to: 'yourmail@gmail.com',
+            subject: 'Pipeline Failed',
+            body: 'Build or Quality Gate failed.'
+        }
     }
 }

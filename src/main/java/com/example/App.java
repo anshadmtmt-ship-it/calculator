@@ -14,7 +14,7 @@ public class App {
 
         App app = new App();
 
-        System.out.println("Addition: " + app.add(10, 5));
-        System.out.println("Subtraction: " + app.subtract(10, 5));
+        System.out.println("Addition ans: " + app.add(10, 5));
+        System.out.println("Subtraction ans: " + app.subtract(10, 5));
     }
 }
